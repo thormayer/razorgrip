@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header">
+    List of all the cities
+  </div>
+
+  <div class="sb-container">
+    <input type="text" class="searchbox"  (keyup)="searchPress($event)">
+  </div>
+
+  <div class="wrapper">
+    <mat-card *ngFor="let city of list" (click)="selectCity(city.Id)">
+      <div class="left">
+        <div class="title">
+          {{city.CompanyName}}
+        </div>
+        <div class="subtitle">
+          {{city.City}}, {{city.Country}}
+        </div>
+      </div>
+      <div class="right">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </div>
+    </mat-card>
+  </div>
+
+</div>
