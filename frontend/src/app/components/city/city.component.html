@@ -1,0 +1,42 @@
+<button mat-button (click)="back()">BACK</button>
+
+<mat-card *ngIf="city">
+
+  <!-- https://www.googleapis.com/geolocation/v1/geolocate?key=YOUR_API_KEY -->
+<!-- AIzaSyAMZXQ1eAcrsegH1o0lyaSr-ijTDBEEmQg -->
+<!-- AIzaSyBGHRwmoou9Y-zyX4ckx63zTQOvILodQwg -->
+
+  <mat-list>
+    <div class="title">
+      {{city.Id}}
+    </div>
+    <mat-list-item>
+      <mat-icon matListIcon>chevron_right</mat-icon>
+      <h3 matLine>Address</h3>
+      <p matLine>
+        <span> {{city.Address}} </span>
+
+      </p>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon matListIcon>chevron_right</mat-icon>
+      <h3 matLine>City</h3>
+      <p matLine>
+        <span> {{city.City}} </span>
+
+      </p>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon matListIcon>chevron_right</mat-icon>
+      <h3 matLine>Company Name</h3>
+      <p matLine>
+        <span> {{city.CompanyName}} </span>
+
+      </p>
+    </mat-list-item>
+  </mat-list>
+  <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+
+</mat-card>
